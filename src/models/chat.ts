@@ -1,3 +1,4 @@
+// ./src/models/chat.ts
 import { Message } from './message';
 
 export interface Chat {

@@ -1,3 +1,4 @@
+// ./src/app.ts
 import express from 'express';
 import { errorHandler } from './middlewares/errorHandler';
 import * as routes from './routes/';
