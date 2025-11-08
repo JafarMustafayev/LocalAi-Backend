@@ -1,5 +1,5 @@
 // ./src/models/chat.ts
-import { Message } from './message';
+import type { Message } from './message';
 
 export interface Chat {
   id: string;
