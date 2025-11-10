@@ -7,7 +7,6 @@ import { randomUUID } from 'crypto';
 import { Message, mesages } from '../models/message';
 
 export const getChats = (req: Request, res: Response, next: NextFunction) => {
-  const { page, take, is_archived } = req.query;
   try {
     ResponseHelper.success(
       res,

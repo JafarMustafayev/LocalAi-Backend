@@ -1,8 +1,8 @@
 // ./src/dtos/ResponseDto.ts
-export interface ResponseDto<T = any> {
+export interface ResponseDto {
   isSuccess: boolean;
   statusCode: number;
   errors?: string[];
   message?: string;
-  data?: T;
+  data?: any;
 }

@@ -1,9 +1,10 @@
+// ./src/utils/responseHelper.ts
 import type { Response } from 'express';
 import type { ResponseDto } from '../dtos/responseDto';
 
 export class ResponseHelper {
-  static success<T>(res: Response, data?: T, message?: string, statusCode: number = 200): void {
-    const response: ResponseDto<T> = {
+  static success(res: Response, data?: any, message?: string, statusCode: number = 200): void {
+    const response: ResponseDto = {
       isSuccess: true,
       statusCode,
       message,
