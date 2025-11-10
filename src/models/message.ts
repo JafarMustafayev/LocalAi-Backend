@@ -6,7 +6,7 @@ export interface Message {
   content: string;
   timestamp: number;
   isThinking?: boolean;
-  reaction?: 'like' | 'dislike';
+  reaction?: 'like' | 'dislike' | null;
 }
 
 export let mesages: Message[] = [];

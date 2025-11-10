@@ -1,7 +1,7 @@
 // ./src/exceptions/CustomErrors.ts
 export class AppError extends Error {
-  statusCode: number;
-  errors?: string[];
+  public statusCode: number;
+  public errors?: string[];
 
   constructor(message: string, statusCode: number = 500, errors?: string[]) {
     super(message);
@@ -13,8 +13,8 @@ export class AppError extends Error {
 }
 
 export class NotFoundException extends AppError {
-  constructor(message: string = 'Məlumat tapılmadı') {
-    super(message, 404);
+  constructor(message?: string) {
+    super(message || 'Məlumat tapılmadı', 404);
   }
 }
 
@@ -25,7 +25,13 @@ export class ValidationError extends AppError {
 }
 
 export class UnauthorizedError extends AppError {
-  constructor(message: string = 'İcazə yoxdur') {
-    super(message, 401);
+  constructor(message?: string) {
+    super(message || 'İcazə yoxdur', 401);
+  }
+}
+
+export class BadRequestException extends AppError {
+  constructor(message?: string) {
+    super(message || 'Ugursuz emeliyyat', 400);
   }
 }
