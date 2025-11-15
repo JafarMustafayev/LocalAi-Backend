@@ -5,6 +5,7 @@ interface Config {
   databaseUrl: string;
   jwtSecret: string;
   logLevel: string;
+  nodeEnv: string;
 }
 
 dotenv.config();
@@ -14,6 +15,7 @@ const config: Config = {
   databaseUrl: process.env.DATABASE_URL || 'mongodb://localhost:27017/myapp',
   jwtSecret: process.env.JWT_SECRET || 'defaultsecret',
   logLevel: process.env.LOG_LEVEL || 'info',
+  nodeEnv: process.env.NODE_ENV || 'development',
 };
 
 export default config;
