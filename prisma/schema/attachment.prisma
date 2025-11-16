@@ -1,0 +1,15 @@
+model Attachments {
+  id        String    @id @default(uuid())
+  messageId String
+  fileName  String
+  fileType  String
+  filePath  String
+  fileSize  Int
+  createdAt DateTime  @default(now())
+  deletedAt DateTime?
+  isDeleted Boolean   @default(false)
+
+  message Messages @relation(fields: [messageId], references: [id])
+
+  @@map("Attachments")
+}

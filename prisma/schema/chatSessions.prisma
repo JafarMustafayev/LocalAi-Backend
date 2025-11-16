@@ -1,0 +1,19 @@
+model ChatSessions {
+  id      String  @id @default(uuid())
+  userId  String?
+  modelId String
+  title   String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  isActive  Boolean  @default(true)
+
+  deletedAt DateTime?
+  isDeleted Boolean   @default(false)
+
+  user     Users?     @relation(fields: [userId], references: [id])
+  model    LLMModels  @relation(fields: [modelId], references: [id])
+  messages Messages[]
+
+  @@map("ChatSessions")
+}

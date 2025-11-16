@@ -1,0 +1,26 @@
+model LLMModels {
+  id             String  @id @default(uuid())
+  name           String
+  version        String
+  architecture   String
+  parameterCount Int
+  vocabSize      Int
+  quantization   String
+  contextLength  Int
+  localPath      String
+  format         String
+  gpuRequired    Boolean @default(false)
+  gpuMemoryGB    Int?
+  description    String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  deletedAt DateTime?
+  isDeleted Boolean   @default(false)
+
+  sessions    ChatSessions[]
+  preferredBy UserSettings[] @relation("PreferredModel")
+
+  @@map("LLMModels")
+}

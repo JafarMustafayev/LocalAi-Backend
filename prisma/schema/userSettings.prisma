@@ -1,0 +1,18 @@
+model UserSettings {
+  id               String    @id @default(uuid())
+  userId           String    @unique
+  theme            String    @default("light")
+  preferredModelId String?
+  language         String    @default("az")
+  temperature      Float?
+  maxTokens        Int?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  deletedAt        DateTime?
+  isDeleted        Boolean   @default(false)
+
+  user           Users      @relation(fields: [userId], references: [id])
+  preferredModel LLMModels? @relation("PreferredModel", fields: [preferredModelId], references: [id])
+
+  @@map("UserSettings")
+}

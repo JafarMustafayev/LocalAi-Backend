@@ -1,0 +1,23 @@
+model Messages {
+  id         String      @id @default(uuid())
+  sessionId  String
+  role       MessageRole
+  content    String?
+  isThinking Boolean     @default(false)
+  reaction   String?
+  tokenCount Int?
+  createdAt  DateTime    @default(now())
+  deletedAt  DateTime?
+  isDeleted  Boolean     @default(false)
+
+  session     ChatSessions  @relation(fields: [sessionId], references: [id])
+  attachments Attachments[]
+
+  @@map("Messages")
+}
+
+enum MessageRole {
+  user
+  assistant
+  system
+}
