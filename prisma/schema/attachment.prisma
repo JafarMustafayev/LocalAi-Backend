@@ -9,7 +9,7 @@ model Attachments {
   deletedAt DateTime?
   isDeleted Boolean   @default(false)
 
-  message Messages @relation(fields: [messageId], references: [id])
+  message Messages @relation(fields: [messageId], references: [id], onDelete: Cascade)
 
   @@map("Attachments")
 }

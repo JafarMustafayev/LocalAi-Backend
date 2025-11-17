@@ -12,7 +12,7 @@ model UserSettings {
   isDeleted        Boolean   @default(false)
 
   user           Users      @relation(fields: [userId], references: [id])
-  preferredModel LLMModels? @relation("PreferredModel", fields: [preferredModelId], references: [id])
+  preferredModel LLMModels? @relation("PreferredModel", fields: [preferredModelId], references: [id], onDelete: Cascade)
 
   @@map("UserSettings")
 }

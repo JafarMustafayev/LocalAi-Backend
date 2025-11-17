@@ -7,10 +7,8 @@ model Messages {
   reaction   String?
   tokenCount Int?
   createdAt  DateTime    @default(now())
-  deletedAt  DateTime?
-  isDeleted  Boolean     @default(false)
 
-  session     ChatSessions  @relation(fields: [sessionId], references: [id])
+  session     ChatSessions  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
   attachments Attachments[]
 
   @@map("Messages")
