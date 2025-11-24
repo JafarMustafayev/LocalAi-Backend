@@ -19,7 +19,12 @@ export class NotFoundException extends AppError {
 }
 
 export class ValidationError extends AppError {
-  constructor(errors: string[], message: string = 'Validasiya xətası') {
+  constructor(message: string | string[] = 'Validasiya xətası') {
+    let errors: string[] | undefined;
+    if (Array.isArray(message)) {
+      errors = message;
+      message = 'Validasiya xətası';
+    }
     super(message, 400, errors);
   }
 }
@@ -31,7 +36,12 @@ export class UnauthorizedError extends AppError {
 }
 
 export class BadRequestException extends AppError {
-  constructor(message?: string) {
-    super(message || 'Ugursuz emeliyyat', 400);
+  constructor(message: string | string[] = 'Ugursuz emeliyyat') {
+    let errors: string[] | undefined;
+    if (Array.isArray(message)) {
+      errors = message;
+      message = 'Ugursuz emeliyyat';
+    }
+    super(message, 400, errors);
   }
 }

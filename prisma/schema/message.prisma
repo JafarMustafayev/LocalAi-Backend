@@ -1,14 +1,22 @@
 model Messages {
-  id         String      @id @default(uuid())
-  sessionId  String
+  id        String  @id @default(uuid())
+  sessionId String
+  modelId   String?
+
   role       MessageRole
-  content    String?
-  isThinking Boolean     @default(false)
+  content    String
   reaction   String?
   tokenCount Int?
-  createdAt  DateTime    @default(now())
+
+  reactiion String?
+
+  thinkingContent  String?
+  thinkingDuration Int?
+
+  createdAt DateTime @default(now())
 
   session     ChatSessions  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  model       LLMModels?    @relation(fields: [modelId], references: [id], onDelete: SetNull)
   attachments Attachments[]
 
   @@map("Messages")

@@ -12,6 +12,7 @@ model LLMModels {
   gpuRequired    Boolean @default(false)
   gpuMemoryGB    Int?
   description    String?
+  capabilities   Json?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -20,6 +21,7 @@ model LLMModels {
   isDeleted Boolean   @default(false)
 
   sessions    ChatSessions[]
+  messages    Messages[]
   preferredBy UserSettings[] @relation("PreferredModel")
 
   @@map("LLMModels")
