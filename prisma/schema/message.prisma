@@ -8,8 +8,6 @@ model Messages {
   reaction   String?
   tokenCount Int?
 
-  reactiion String?
-
   thinkingContent  String?
   thinkingDuration Int?
 
