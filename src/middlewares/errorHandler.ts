@@ -1,7 +1,7 @@
 import type { Request, Response, NextFunction } from 'express';
 import type { ResponseDto } from '../dtos/responseDto';
 import { AppError } from '../exceptions/customExceptions';
-import config from '../config/config';
+import configurator from '../config/';
 
 export const errorHandler = (
   err: Error | AppError,
@@ -25,7 +25,11 @@ export const errorHandler = (
       isSuccess: false,
       statusCode: 500,
       message: 'Daxili server xətası',
-      errors: [config.nodeEnv === 'development' ? err.message : 'Gözlənilməz xəta baş verdi'],
+      errors: [
+        configurator.serverConfig.nodeEnv === 'development'
+          ? err.message
+          : 'Gözlənilməz xəta baş verdi',
+      ],
     };
   }
 

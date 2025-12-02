@@ -1,8 +1,7 @@
 // ./src/server.ts
 import app from './app';
-import config from './config/config';
+import configurator from './config';
 
-app.listen(config.port, () => {
-  console.log(`Server running on port ${config.port}`);
-  console.log(`BaseURL: http://localhost:${config.port}/api/`);
+app.listen(configurator.serverConfig.port, () => {
+  console.log(`Server running on port ${configurator.serverConfig.port}`);
 });

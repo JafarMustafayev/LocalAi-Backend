@@ -1,2 +1,2 @@
 // ./src/controllers/index.ts
-export * as chatController from './chatController';
+export * as chatController from './ChatController';
