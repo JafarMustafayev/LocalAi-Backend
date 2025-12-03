@@ -1,6 +1,6 @@
 // ./src/app.ts
 import express from 'express';
-import { errorHandler } from './middlewares/errorHandler';
+import { errorHandler } from './middlewares/error.middleware';
 import { getPrismaClient } from './utils/prismaClient';
 import * as routes from './routes/';
 

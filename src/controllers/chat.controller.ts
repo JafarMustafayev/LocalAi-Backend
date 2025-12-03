@@ -1,7 +1,7 @@
 // ./src/controllers/chatController.ts
 import type { Request, Response, NextFunction } from 'express';
 import { ResponseHelper } from '../utils/responseHelper';
-import { NotFoundException, BadRequestException } from '../exceptions/customExceptions';
+import { NotFoundException, BadRequestException } from '../exceptions/custom.exception';
 
 export const getChats = (req: Request, res: Response, next: NextFunction) => {};
 

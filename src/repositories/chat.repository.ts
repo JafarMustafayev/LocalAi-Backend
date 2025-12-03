@@ -1,5 +1,5 @@
 // ./src/repositories/ChatRepository.ts
-import { BaseRepository } from './BaseRepository';
+import { BaseRepository } from './base.repository';
 import { PrismaClient, ChatSessions } from '../generated/prisma';
 
 export class ChatRepository extends BaseRepository<ChatSessions, PrismaClient['chatSessions']> {

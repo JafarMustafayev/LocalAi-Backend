@@ -1,5 +1,5 @@
 // ./src/services/ChatService.ts
-import { ChatRepository } from '../repositories/ChatRepository';
+import { ChatRepository } from '../repositories/chat.repository';
 import { PrismaClient } from '../generated/prisma';
 
 export class ChatService {

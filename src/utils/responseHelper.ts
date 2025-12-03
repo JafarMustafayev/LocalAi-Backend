@@ -1,6 +1,6 @@
 // ./src/utils/responseHelper.ts
 import type { Response } from 'express';
-import type { ResponseDto } from '../dtos/responseDto';
+import type { ResponseDto } from '../dtos/response.dto';
 
 export class ResponseHelper {
   static success(res: Response, data?: any, message?: string, statusCode: number = 200): void {

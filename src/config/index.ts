@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
-import autfConfig, { AuthConfig } from './authConfig';
-import serverConfig, { ServerConfig } from './serverConfig';
-import dbConfig, { DbConfig } from './dbConfig';
+import autfConfig, { AuthConfig } from './auth.config';
+import serverConfig, { ServerConfig } from './server.config';
+import dbConfig, { DbConfig } from './db.config';
 
 dotenv.config();
 

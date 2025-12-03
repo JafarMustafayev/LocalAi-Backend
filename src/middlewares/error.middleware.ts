@@ -1,7 +1,7 @@
 import type { Request, Response, NextFunction } from 'express';
-import type { ResponseDto } from '../dtos/responseDto';
-import { AppError } from '../exceptions/customExceptions';
-import configurator from '../config/';
+import type { ResponseDto } from '../dtos/response.dto';
+import { AppError } from '../exceptions/custom.exception';
+import configurator from '../config';
 
 export const errorHandler = (
   err: Error | AppError,
